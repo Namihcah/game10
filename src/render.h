@@ -11,6 +11,6 @@
 static const int rows = T_ROWS*10; 
 static const int cols = T_COLS*10;
 
-void draw(GLFWwindow *window, struct State *state);
+void draw(GLFWwindow *window, game10_tetris::Tetris *t);
 
 #endif
