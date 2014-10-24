@@ -12,6 +12,14 @@ namespace game10_tetris
 		score = 0;
 		party = false;
 
+		for (int i = 0; i < T_ROWS; ++i)
+		{
+			for (int j = 0; j < T_COLS; ++j)
+			{
+				grid[i][j] = 0;
+			}
+		}
+
 		auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
 		mt.seed(seed);
 
@@ -162,7 +170,7 @@ namespace game10_tetris
 		{
 			for (j = 0, hits = 0; j < T_COLS; ++j)
 			{
-				if (grid[i][j] >= 0) hits++;
+				if (grid[i][j] > 0) hits++;
 			}
 			if (hits == T_COLS)
 			{
@@ -204,7 +212,7 @@ namespace game10_tetris
 					{
 						return true;
 					}
-					else if (grid[row][col] >= 0)
+					else if (grid[row][col] > 0)
 					{
 						return true;
 					}
